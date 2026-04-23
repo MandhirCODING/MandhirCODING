@@ -1,0 +1,214 @@
+:root {
+  /* Adjustable size system (change these once for all devices) */
+  --header-height: clamp(40px, 5vw, 52px);
+  --hero-height: clamp(220px, 34vw, 320px);
+  --main-gap: 1rem;
+
+  --title-size: clamp(1rem, 1.2vw + 0.8rem, 1.35rem);
+  --text-size: clamp(0.9rem, 0.5vw + 0.75rem, 1.1rem);
+  --badge-size: clamp(0.72rem, 0.35vw + 0.64rem, 0.95rem);
+  --badge-pad-y: clamp(0.45rem, 0.8vw, 0.8rem);
+  --badge-pad-x: clamp(0.65rem, 1.4vw, 1.5rem);
+
+  --panel-bg: #78829d0d;
+  --brand: #1f4e8c;
+  --text: #333333f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  min-height: var(--header-height);
+  background: var(--brand);
+  color: #fff;
+  display: grid;
+  align-items: center;
+  padding-inline: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.hero-section {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 1010;
+  background: #fff;
+  border-bottom: 1px solid #e9ecef;
+  height: var(--hero-height);
+  transition: height 0.25s ease;
+}
+
+.hero-content {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.qr-image {
+  width: min(100%, 1200px);
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s linear;
+}
+
+.page-content {
+  padding-top: var(--main-gap);
+  padding-bottom: 2rem;
+}
+
+.param-section {
+  background: var(--panel-bg);
+  padding: clamp(0.9rem, 2vw, 2rem);
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.param-grid {
+  display: grid;
+  gap: clamp(0.5rem, 1.2vw, 0.95rem);
+  margin-bottom: 0.75rem;
+  font-size: clamp(0.8rem, 0.5vw + 0.72rem, 1rem);
+}
+
+.param-grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.param-grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.param-grid div {
+  background: #fff;
+  border-radius: 0.35rem;
+  padding: 0.65rem 0.55rem;
+  text-align: center;
+}
+
+.heart {
+  font-size: 1.05em;
+}
+
+.info-title {
+  font-size: var(--title-size);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.info-text {
+  font-size: var(--text-size);
+  line-height: 1.6;
+  margin: 0.75rem 0 1rem;
+}
+
+h2 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid #d7d7d7;
+  padding-bottom: 0.25rem;
+  font-size: clamp(1rem, 0.8vw + 0.86rem, 1.2rem);
+}
+
+.info-row,
+.acvput-row,
+.resp-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.label {
+  min-width: 4.5rem;
+  font-weight: 600;
+}
+
+.badge {
+  border-radius: 0;
+  padding: var(--badge-pad-y) var(--badge-pad-x);
+  font-size: var(--badge-size);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.red { background: red; color: #fff; }
+.orange { background: orange; }
+.yellow { background: yellow; }
+.green { background: #34cc33; }
+.blue { background: #0034ff; color: #fff; }
+.trueblue { background: #269cf4; color: #fff; }
+.canary { background: #ffff99; }
+.brown { background: #ffcc66; }
+.pink { background: #fd9496; color: #fff; }
+.yellowlite { background: #ffdd00; }
+.aqua { background: #01ffff; }
+.grey { background: #d3d3d3; }
+.white { background: #fff; border: 1px solid #ccc; }
+.mild { background: #e4ec9b; }
+.moderate { background: #f4a300; }
+
+.arrow-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.arrow-group { text-align: center; }
+
+.arrow-box-simple {
+  border: 1px solid #dcdcdc;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.arrow-row-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.8rem, 3vw, 2.2rem);
+  flex-wrap: wrap;
+}
+
+.arrow-row-img img {
+  width: clamp(26px, 4.4vw, 48px);
+  height: auto;
+}
+
+.arrow-label {
+  margin-top: 0.55rem;
+  font-size: clamp(0.78rem, 0.5vw + 0.7rem, 0.95rem);
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .param-grid.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .param-grid.three,
+  .param-grid.four {
+    grid-template-columns: 1fr;
+  }
+}
